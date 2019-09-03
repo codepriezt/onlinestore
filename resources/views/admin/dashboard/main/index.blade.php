@@ -1,0 +1,13 @@
+@extends('admin.layouts.auth')
+@section('page-content')
+@include('admin.dashboard.main.components.navbar')
+@include('admin.dashboard.main.components.left-sidebar')
+@include('admin.dashboard.main.components.right-sidebar')
+@include('admin.dashboard.main.components.chat')
+@include('admin.dashboard.main.components.top-mainsection')
+@include('admin.dashboard.main.components.sales')
+@include('admin.dashboard.main.components.rating')
+@include('admin.dashboard.main.components.staticstics')
+@include('admin.dashboard.main.components.product')
+@include('admin.dashboard.main.components.weather')
+@endsection
