@@ -1,0 +1,9 @@
+@extends('admin.layouts.auth')
+@section('page-content')
+@include('admin.dashboard.main.components.navbar')
+@include('admin.dashboard.main.components.left-sidebar')
+@include('admin.dashboard.main.components.right-sidebar')
+@include('admin.dashboard.main.components.navbar')
+@include('admin.dashboard.main.components.chat')
+@include('admin.department.components.department-list')
+@endsection

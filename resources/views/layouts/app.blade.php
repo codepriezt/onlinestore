@@ -30,12 +30,14 @@
 
 </div>
     <!-- Plugins JS File -->
-    <script src="{{asset ('asset/js/jquery.min.js')}}"></script>
-    <script src="{{asset ('asset/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset ('asset/js/plugins.min.js')}}"></script>
+    <script src="{{asset('asset/js/jquery.min.js')}}"></script>
+    <script src="{{asset('asset/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('asset/js/plugins.min.js')}}"></script>
+    <script src="{{asset('asset/js/plugins.min.js')}}"></script>
+    <script src="{{asset('asset/js/nouislider.min.js')}}"></script>
 
     <!-- Main JS File -->
-    <script src="{{asset ('asset/js/main.min.js')}}"></script>
+    <script src="{{asset('asset/js/main.min.js')}}"></script>
 </body>
 
 <!-- Mirrored from portotheme.com/html/porto_ecommerce/demo-11/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 31 Aug 2019 22:55:53 GMT -->
