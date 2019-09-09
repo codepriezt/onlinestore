@@ -1,0 +1,9 @@
+@extends('layouts.app')
+@section('page-content')
+@include('main.home.components.header')
+@include('main.cart.components.main')
+@include('main.cart.components.rightbar')
+@include('main.home.components.footer')
+@include('main.product.components.mobile-view')
+@include('main.product.components.newsletter')
+@endsection

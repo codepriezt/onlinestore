@@ -13,14 +13,14 @@
                     <a href="mail-inbox.html" title="Inbox"><i class="zmdi zmdi-email"></i></a>
                     <a href="contact.html" title="Contact List"><i class="zmdi zmdi-account-box-phone"></i></a>
                     <a href="chat.html" title="Chat App"><i class="zmdi zmdi-comments"></i></a>
-                    <a href="sign-in.html" title="Sign out"><i class="zmdi zmdi-power"></i></a>
+                    <a href="{{route('logout')}}" title="Sign out"><i class="zmdi zmdi-power"></i></a>
                 </div>
             </li>
             <li class="header">MAIN</li>
             <li class="active open"> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a>
                 <ul class="ml-menu">
-                    <li class="active"><a href="index.html">Main</a> </li>
-                    <li><a href="ec-dashboard.html">Ecommerce</a></li>
+                    <li class="{{(strpos(Route::currentRouteName() , 'main-dashboard') === 0)? 'active' : ''}}"><a href="{{route('main-dashboard')}}">Main</a> </li>
+                    <li class="{{(strpos(Route::currentRouteName() , 'ecommerce-dashboard') === 0)? 'active' : ''}}"><a href="{{route('ecommerce-dashboard')}}">Ecommerce</a></li>
                     <li><a href="blog-dashboard.html">Blog</a></li>
                 </ul>
             </li>
@@ -65,7 +65,7 @@
             <li class="header">SECTION</li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-shopping-cart"></i><span>Ecommerce</span> </a>
                 <ul class="ml-menu">
-                    <li> <a href="ec-dashboard.html">Dashboard</a></li>
+                    <li> <a href="{{route('all_department')}}">Department</a></li>
                     <li> <a href="ec-product.html">Product</a></li>
                     <li> <a href="ec-product-List.html">Product List</a></li>
                     <li> <a href="ec-product-detail.html">Product detail</a></li>

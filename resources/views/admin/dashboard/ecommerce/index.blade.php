@@ -1,0 +1,13 @@
+@extends('admin.layouts.auth')
+@section('page-content')
+@include('admin.dashboard.ecommerce.components.navbar')
+@include('admin.dashboard.main.components.left-sidebar')
+@include('admin.dashboard.main.components.right-sidebar')
+@include('admin.dashboard.main.components.chat')
+@include('admin.dashboard.ecommerce.components.revenue')
+@include('admin.dashboard.ecommerce.components.product')
+@include('admin.dashboard.ecommerce.components.annual-report')
+@include('admin.dashboard.ecommerce.components.selling-country')
+@include('admin.dashboard.ecommerce.components.customer-rating')
+@include('admin.dashboard.ecommerce.components.order')
+@endsection

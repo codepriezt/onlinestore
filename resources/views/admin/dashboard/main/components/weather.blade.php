@@ -198,3 +198,6 @@
         </div>
     </div>
 </section>
+@section('script-section')
+<script src="{{asset('asset-admin/js/pages/index.js')}}"></script>
+@endsection
