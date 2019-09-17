@@ -30,6 +30,23 @@ Route::group(['prefix'=> '' ], function(){
      Route::get('/cart' , 'Main\PageController@cartView')->name('shoppingCart');
      Route::post('/cart/add' , 'CartController@store')->name('cart.add');
      Route::delete('/cart/{product}' , 'CartController@destroy')->name('cart.delete');
+     Route::post('cart/watchlist/{product}' , 'CartController@watchlist')->name('cart.watchlist');
+
+     //Watchlist
+     Route::delete('/watchlist/{product}' , 'WatchlistController@destroy')->name('watchlist.delete');
+     Route::post('/watchlist/add/{product}' , 'WatchlistController@addToCart')->name('watchlist.add');
+
+     //checkout
+     Route::get('/checkout' , 'Main\PageController@checkout')->name('checkout.index');
+     Route::post('/checkout/details' , 'CheckoutController@store')->name('checkout.store');
+
+     //order
+     Route::get('/order' , 'Main\PageController@order')->name('order.index');
+
+    //payment
+     Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay'); 
+     Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
+    
 });
 
 
@@ -46,7 +63,7 @@ Route::group(['prefix'=>'admin'] ,function(){
     Route::post('/department/add' ,'DepartmentController@createDepartment')->name('add_department');
     Route::post('/department/delete/{id}' , 'DepartmentController@deleteDepartment')->name('delete_department');
 
-
+    
    
 
 });

@@ -73,4 +73,17 @@ class PageController extends Controller
     }
 
     
+    //checkout view
+    public function checkout()
+    {
+        return view('main.checkout.index');
+    }
+
+    // order
+    public function order()
+    {
+        return view('main.order.index');
+    }
+
+    
 }

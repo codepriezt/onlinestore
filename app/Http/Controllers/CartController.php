@@ -23,9 +23,25 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function watchlist($id)
     {
-        //
+        $item = Cart::get($id);
+
+        Cart::remove($id);
+
+        $duplicates = Cart::instance('watchlist')->search(function ($cartItem , $rowId) use ($id)
+        {
+            return $rowId === $id;
+        });
+
+        if($duplicates->isNotEmpty()){
+            return back()->with('info' , 'Item already added to watchlist');
+        }
+
+        Cart::instance('watchlist')->add($item->id ,$item->name , 1 , $item->price , $item->weight)
+        ->associate('App\Product');
+
+        return back()->with('success' , "Item has been save to watchlist");
     }
 
     /**
@@ -51,39 +67,9 @@ class CartController extends Controller
         return back()->with('success' , "Product successfully added to cart");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    
 
     /**
      * Remove the specified resource from storage.
