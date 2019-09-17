@@ -66,8 +66,12 @@
                                     <tr class="product-action-row">
                                         <td colspan="4" class="clearfix">
                                             <div class="float-left">
-                                                <a href="#" class="btn-move">Move to Wishlist</a>
-                                            </div><!-- End .float-left -->
+                                                <!-- <a href="#" class="btn-move">Move to Wishlist</a> -->
+                                                <form action="{{route('cart.watchlist' , $item->rowId)}}" method="post">
+                                                {{ csrf_field()}}
+                                                <button type="submit" class="btn-move">Move to watchlist</button>
+                                                </form>
+                                                </div><!-- End .float-left -->
                                             
                                             <div class="float-right"> 
                                             <a href="#" title="Edit product" class="btn-edit"><span class="sr-only">Edit</span><i class="icon-pencil"></i></a>

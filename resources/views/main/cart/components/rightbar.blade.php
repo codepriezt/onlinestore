@@ -7,52 +7,7 @@
                                 <a data-toggle="collapse" href="#total-estimate-section" class="collapsed" role="button" aria-expanded="false" aria-controls="total-estimate-section">Estimate Shipping and Tax</a>
                             </h4>
 
-                            <div class="collapse" id="total-estimate-section">
-                                <form action="#">
-                                    <div class="form-group form-group-sm">
-                                        <label>Country</label>
-                                        <div class="select-custom">
-                                            <select class="form-control form-control-sm">
-                                                <option value="USA">United States</option>
-                                                <option value="Turkey">Turkey</option>
-                                                <option value="China">China</option>
-                                                <option value="Germany">Germany</option>
-                                            </select>
-                                        </div><!-- End .select-custom -->
-                                    </div><!-- End .form-group -->
-
-                                    <div class="form-group form-group-sm">
-                                        <label>State/Province</label>
-                                        <div class="select-custom">
-                                            <select class="form-control form-control-sm">
-                                                <option value="CA">California</option>
-                                                <option value="TX">Texas</option>
-                                            </select>
-                                        </div><!-- End .select-custom -->
-                                    </div><!-- End .form-group -->
-
-                                    <div class="form-group form-group-sm">
-                                        <label>Zip/Postal Code</label>
-                                        <input type="text" class="form-control form-control-sm">
-                                    </div><!-- End .form-group -->
-
-                                    <div class="form-group form-group-custom-control">
-                                        <label>Flat Way</label>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="flat-rate">
-                                            <label class="custom-control-label" for="flat-rate">Fixed $5.00</label>
-                                        </div><!-- End .custom-checkbox -->
-                                    </div><!-- End .form-group -->
-
-                                    <div class="form-group form-group-custom-control">
-                                        <label>Best Rate</label>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="best-rate">
-                                            <label class="custom-control-label" for="best-rate">Table Rate $15.00</label>
-                                        </div><!-- End .custom-checkbox -->
-                                    </div><!-- End .form-group -->
-                                </form>
-                            </div><!-- End #total-estimate-section -->
+     
 
                             <table class="table table-totals">
                                 <tbody>
@@ -75,7 +30,7 @@
                             </table>
 
                             <div class="checkout-methods">
-                                <a href="checkout-shipping.html" class="btn btn-block btn-sm btn-primary">Go to Checkout</a>
+                                <a href="{{route('checkout.index')}}" class="btn btn-block btn-sm btn-primary">Go to Checkout</a>
                                 <a href="#" class="btn btn-link btn-block">Check Out with Multiple Addresses</a>
                             </div><!-- End .checkout-methods -->
                         </div><!-- End .cart-summary -->
@@ -85,5 +40,49 @@
                 </div><!-- End .row -->
             </div><!-- End .container -->
 
+            @if(Cart::instance('watchlist')->count() == 0)
+              <h3>No items in the watchlist</h3>
+            @else
+
+            <div class="container">
+                <h2 class="subtitle text-center">Watchlist</h2>
+               
+                <div class="top-selling-products owl-carousel owl-theme">
+                    @foreach(Cart::instance('watchlist')->content() as $item)
+                    <div class="product">
+                        <figure class="product-image-container">
+                            <a href="{{route('singleProduct' , $item->model->slug)}}" class="product-image">
+                                <img src="{{asset('asset/images/products/product-2.jpg')}}" alt="product">
+                            </a>
+                            <form action="{{route('watchlist.delete' , $item->rowId)}}" method="post">
+                            {{ csrf_field()}}
+                            {{ method_field('DELETE') }}
+                            <button type="submit" class="btn-quickview">Remove</a>
+                            </form>
+
+                            <form action="{{route('watchlist.add' , $item->rowId)}}" method = "post">
+                            {{csrf_field()}}
+                            <button type="submit" class="paction add-cart"><span>Add to Cart</span></button> 
+                            </form>
+                                  
+                        </figure>
+                        <div class="product-details product-price-inner">
+                            <div class="ratings-container">
+                                <div class="product-ratings">
+                                    <span class="ratings" style="width:0%"></span><!-- End .ratings -->
+                                </div><!-- End .product-ratings -->
+                            </div><!-- End .product-container -->
+                            <h2 class="product-title">
+                                <a href="product.html">{{$item->model->name}}</a>
+                            </h2>
+                            <div class="price-box">
+                                <span class="product-price">{{$item->model->presentPrice()}}</span>
+                            </div><!-- End .price-box -->
+                        </div><!-- End .product-details -->
+                    </div><!-- End .product -->
+                   @endforeach
+                </div><!-- End .featured-proucts -->
+            </div><!-- End .container -->
+            @endif
             <div class="mb-6"></div><!-- margin -->
         </main><!-- End .main -->

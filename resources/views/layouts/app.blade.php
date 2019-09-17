@@ -21,6 +21,8 @@
 
     <!-- Main CSS File -->
     <link rel="stylesheet" href="{{asset ('asset/css/style.min.css')}}">
+
+    @yield('extra-css')
 </head>
 <body>
 <div class="page-wrapper">

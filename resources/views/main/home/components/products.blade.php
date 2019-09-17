@@ -121,24 +121,6 @@
                     </div><!-- End .partners-carousel -->
                 </div><!-- End .container -->
             </div><!-- End .partners-container -->
-
-
-           <div class="instagram-section">
-                <h3 class="subtitle text-center">Follow On Instagram</h3>
-
-                <div class="owl-carousel instagram-feed-carousel owl-lazy-container">
-                    <a href="#"><img class="owl-lazy" src="{{asset('asset/images/lazy.png')}}" data-src="assets/images/instagram/1.jpg" alt="Feed"></a>
-                    <a href="#"><img class="owl-lazy" src="{{asset('asset/images/lazy.png')}}" data-src="assets/images/instagram/2.jpg" alt="Feed"></a>
-                    <a href="#"><img class="owl-lazy" src="{{asset('asset/images/lazy.png')}}" data-src="assets/images/instagram/3.jpg" alt="Feed"></a>
-                    <a href="#"><img class="owl-lazy" src="{{asset('asset/images/lazy.png')}}" data-src="assets/images/instagram/4.jpg" alt="Feed"></a>
-                    <a href="#"><img class="owl-lazy" src="{{asset('asset/images/lazy.png')}}" data-src="assets/images/instagram/5.jpg" alt="Feed"></a>
-                    <a href="#"><img class="owl-lazy" src="{{asset('asset/images/lazy.png')}}" data-src="assets/images/instagram/6.jpg" alt="Feed"></a>
-                    <a href="#"><img class="owl-lazy" src="{{asset('asset/images/lazy.png')}}" data-src="assets/images/instagram/7.jpg" alt="Feed"></a>
-                    <a href="#"><img class="owl-lazy" src="{{asset('asset/images/lazy.png')}}" data-src="assets/images/instagram/8.jpg" alt="Feed"></a>
-                    <a href="#"><img class="owl-lazy" src="{{asset('asset/images/lazy.png')}}" data-src="assets/images/instagram/9.jpg" alt="Feed"></a>
-                    <a href="#"><img class="owl-lazy" src="{{asset('asset/images/lazy.png')}}" data-src="assets/images/instagram/10.jpg" alt="Feed"></a>
-                </div><!-- End .instagram-feed-carousel -->
-            </div><!-- End .instagram-section -->
         </main><!-- End .main -->
 
 
